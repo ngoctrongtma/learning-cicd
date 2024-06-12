@@ -6,11 +6,9 @@ type Params = {
   };
 };
 
+// This function generates the static paths for dynamic routes
 export async function generateStaticParams() {
-  // Fetch or define your dynamic routes here
   const slugs = await fetchBlogSlugs();
-
-  // Return the list of paths
   return slugs.map(slug => ({
     params: { slug }
   }));
@@ -18,14 +16,16 @@ export async function generateStaticParams() {
 
 // Dummy function to represent fetching blog slugs
 async function fetchBlogSlugs() {
-  // Replace this with actual data fetching logic
+  // Replace this with your actual data fetching logic
   return ['slug1', 'slug2', 'slug3'];
 }
 
+// Function to generate metadata for each page
 export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
 
+// Page component to render the slug
 export default function Page({ params }: Params) {
   return <h1>Slug: {params.slug}</h1>;
 }
