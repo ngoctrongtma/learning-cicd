@@ -6,5 +6,5 @@ import Page from "./page";
 
 it("App Router: Works with Server Components", () => {
   render(<Page />);
-  expect(screen.getByRole("heading")).toHaveTextContent("This page to learning CICD be created by Trong Truong change to fail");
+  expect(screen.getByRole("heading")).toHaveTextContent("This page to learning CICD be created by Trong Truong");
 });
